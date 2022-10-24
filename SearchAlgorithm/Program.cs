@@ -74,8 +74,36 @@ namespace SearchAlgorithm
                 ch = char.Parse(Console.ReadLine());
             } while ((ch == 'y') || (ch == 'Y'));
         }
+        public void LiniearSearch()
+        {
+            char ch;
+
+            int ctr;
+            do
+            {
+                Console.Write("\nEnter the elements you want to search: ");
+                int item = Convert.ToInt32(Console.ReadLine());
+
+                ctr = 0;
+                for (i = 0; 1 < n; i++)
+                {
+                    ctr++;
+                    if (arr[i] == item)
+                    {
+                        Console.WriteLine("\n" + item.ToString() + "found st position" + (1 + 1).ToString());
+                        break;
+                    }
+                }
+                if (1 == n)
+                    Console.WriteLine("\n" + item.ToString() + "not found in the array");
+                Console.WriteLine("\nNumber of comparison: " + ctr);
+                Console.Write("\nContinue Search? (n/y): ");
+                ch = char.Parse(Console.ReadLine());
+            } while ((ch == 'y') || (ch == 'Y'));
+        }
         static void Main(string[] args)
         {
+
         }
     }
 }
