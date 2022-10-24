@@ -34,7 +34,7 @@ namespace SearchAlgorithm
             Console.WriteLine("-------------------");
             for (i = 0; i < n; i++)
             {
-                Console.Write("<" + (1 + 1) + ">");
+                Console.Write("<" + (i + 1) + ">");
                 string s1 = Console.ReadLine();
                 arr[i] = Int32.Parse(s1);
             }
@@ -90,11 +90,11 @@ namespace SearchAlgorithm
                     ctr++;
                     if (arr[i] == item)
                     {
-                        Console.WriteLine("\n" + item.ToString() + "found st position" + (1 + 1).ToString());
+                        Console.WriteLine("\n" + item.ToString() + "found st position" + (i + 1).ToString());
                         break;
                     }
                 }
-                if (1 == n)
+                if (i == n)
                     Console.WriteLine("\n" + item.ToString() + "not found in the array");
                 Console.WriteLine("\nNumber of comparison: " + ctr);
                 Console.Write("\nContinue Search? (n/y): ");
@@ -103,7 +103,46 @@ namespace SearchAlgorithm
         }
         static void Main(string[] args)
         {
+            Program myList = new Program();
+            int pilihan;
+            do
+            {
+                Console.WriteLine("Menu Option");
+                Console.WriteLine("----------------");
+                Console.WriteLine("1. Linear Search");
+                Console.WriteLine("2. Binary Search");
+                Console.WriteLine("3. Exit");
+                pilihan = Convert.ToInt32(Console.ReadLine());
 
+                switch (pilihan)
+                {
+                    case 1:
+                        Console.WriteLine("");
+                        Console.WriteLine(".............");
+                        Console.WriteLine("Linear Search");
+                        Console.WriteLine(".............");
+                        myList.input();
+                        myList.LiniearSearch();
+                        break;
+                    case 2:
+                        Console.WriteLine("");
+                        Console.WriteLine(".............");
+                        Console.WriteLine("Binary Search");
+                        Console.WriteLine(".............");
+                        myList.input();
+                        myList.BinarySearch();
+                        break;
+                    case 3:
+                        Console.WriteLine("exit");
+                        break;
+                    default:
+                        Console.WriteLine("error");
+                        break;
+                }
+
+                Console.WriteLine("\n\nPress Return to exit");
+                Console.ReadLine();
+            } while (pilihan != 3);
         }
     }
 }
